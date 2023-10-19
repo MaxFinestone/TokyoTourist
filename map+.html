@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Tokyo Tourist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+  <div class="sidebar">
+    <header class="head">Tokyo Tourist</header>
+    <ul>
+      <li><a href="Index.html"><i class="fas fa-torii-gate"></i>Home</a></li>
+      <li><a href="map.html"><i class="fas fa-map"></i>Map</a></li>
+      <li><a href="about.html"><i class="fas fa-user-circle"></i>About Us</a></li>
+      <li><a href="#" class="theme-toggle"><i class="fas fa-sun"></i>Theme</a></li>
+      </ul>
+      <div class="clock-container">
+        <div class="clock">
+          <div class="display"></div>
+        </div>
+      </div>
+  </div>
+  <section class="tinfo" style="text-align: center;">
+    <main><br><br><br>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1W_nwtzlpSnqdHa98akLjQfaN65Scm-c&ehbc=2E312F" width="1300" height="800"></iframe>
+    </main>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html#abtus">Our amazing team</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Note to user</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Privacy policy</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Terms of use</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Cookie policy</a></li>
+            <li><a href="siterights.html">Site rights</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">FAQ</a></li>
+            <li><a href="about.html#emal">Email us</a></li>
+            <li><a href="about.html#ourlocoloco">Our location</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://uk.linkedin.com/in/max-finestone-016961276" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/max_finestone/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCkBHIcjlsCWL6U1M6AcVDyw" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Our Location</h4>
+          <ul>
+            <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3112718346024!2d-0.5803690228342702!3d51.41570847179261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487679ef0ba96e5d%3A0x41b7cd9b50be9f6b!2sACS%20International%20School%20Egham!5e0!3m2!1sen!2spt!4v1697402963232!5m2!1sen!2spt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.querySelector('.theme-toggle');
+  const body = document.body;
+  const sidebar = document.querySelector('.sidebar');
+  const clock = document.querySelector('.clock-container');
+  const footer = document.querySelector('.footer');
+
+  themeToggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-theme')) {
+      body.classList.remove('dark-theme');
+      sidebar.classList.remove('dark-theme');
+      clock.style.backgroundColor = 'white';
+      clock.querySelector('.display').style.color = 'cyan';
+      footer.style.backgroundColor = 'var(--footer-bg-color-light)';
+      document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-light)');
+      localStorage.setItem('theme', 'light-theme');
+    } else {
+      body.classList.add('dark-theme');
+      sidebar.classList.add('dark-theme');
+      clock.style.backgroundColor = 'black';
+      clock.querySelector('.display').style.color = 'white';
+      footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
+      document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
+      localStorage.setItem('theme', 'dark-theme');
+    }
+  });
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    body.classList.add(savedTheme);
+    if (savedTheme === 'dark-theme') {
+      sidebar.classList.add('dark-theme');
+      clock.style.backgroundColor = 'black';
+      clock.querySelector('.display').style.color = 'white';
+      footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
+      document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
+    }
+  }
+});
+
+</script>
+<script>
+  function updateClock() {
+    const clock = document.querySelector(".display");
+    const japanTime = new Date();
+    japanTime.setHours(japanTime.getHours() + 8); // Adjust for UTC+9 (Japan Standard Time)
+    let sec = japanTime.getSeconds();
+    let min = japanTime.getMinutes();
+    let hr = japanTime.getHours();
+    let day = 'AM';
+    if (hr >= 12) {
+      day = 'PM';
+      hr = hr - 12;
+    }
+    if (hr === 0) {
+      hr = 12;
+    }
+    if (sec < 10) {
+      sec = '0' + sec;
+    }
+    if (min < 10) {
+      min = '0' + min;
+    }
+    if (hr < 10) {
+      hr = '0' + hr;
+    }
+    clock.textContent = hr + ':' + min + ':' + sec + ' ' + day;
+  }
+
+  // Initial call to update the clock
+  updateClock();
+
+  // Set up a refresh every second
+  setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
