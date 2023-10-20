@@ -76,53 +76,58 @@
   </footer>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const themeToggle = document.querySelector('.theme-toggle');
-      const body = document.body;
-      const sidebar = document.querySelector('.sidebar');
-      const clock = document.querySelector('.clock-container');
-      const footer = document.querySelector('.footer');
-      const links = document.querySelectorAll('.link1');
-      const main = document.querySelector('.main');
-  
-      themeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-theme')) {
-          body.classList.remove('dark-theme');
-          sidebar.classList.remove('dark-theme');
-          clock.style.backgroundColor = 'white';
-          clock.querySelector('.display').style.color = 'cyan';
-          footer.style.backgroundColor = 'var(--footer-bg-color-light)';
-          document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-light)');
-          links.forEach(link => link.classList.remove('dark-theme'));
-          main.classList.remove('dark-theme'); // Remove dark-theme class from the main element
-          localStorage.setItem('theme', 'light-theme');
-        } else {
-          body.classList.add('dark-theme');
-          sidebar.classList.add('dark-theme');
-          clock.style.backgroundColor = 'black';
-          clock.querySelector('.display').style.color = 'white';
-          footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
-          document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
-          links.forEach(link => link.classList.add('dark-theme'));
-          main.classList.add('dark-theme'); // Add dark-theme class to the main element
-          localStorage.setItem('theme', 'dark-theme');
-        }
-      });
-  
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        body.classList.add(savedTheme);
-        if (savedTheme === 'dark-theme') {
-          sidebar.classList.add('dark-theme');
-          clock.style.backgroundColor = 'black';
-          clock.querySelector('.display').style.color = 'white';
-          footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
-          document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
-          links.forEach(link => link.classList.add('dark-theme'));
-          main.classList.add('dark-theme'); // Add dark-theme class to the main element
-        }
-      }
-    });
-  </script>
+     const themeToggle = document.querySelector('.theme-toggle');
+     const body = document.body;
+     const sidebar = document.querySelector('.sidebar');
+     const clock = document.querySelector('.clock-container');
+     const footer = document.querySelector('.footer');
+     const links = document.querySelectorAll('.link1');
+     const main = document.querySelector('.main');
+   
+     themeToggle.addEventListener('click', () => {
+         if (body.classList.contains('dark-theme')) {
+             applyLightTheme();
+         } else {
+             applyDarkTheme();
+         }
+     });
+   
+     function applyDarkTheme() {
+         body.classList.add('dark-theme');
+         sidebar.classList.add('dark-theme');
+         clock.style.backgroundColor = 'black';
+         clock.querySelector('.display').style.color = 'white';
+         footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
+         document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
+         links.forEach(link => link.classList.add('dark-theme'));
+         main.classList.add('dark-theme');
+         localStorage.setItem('theme', 'dark-theme');
+     }
+   
+     function applyLightTheme() {
+         body.classList.remove('dark-theme');
+         sidebar.classList.remove('dark-theme');
+         clock.style.backgroundColor = 'white';
+         clock.querySelector('.display').style.color = 'cyan';
+         footer.style.backgroundColor = 'var(--footer-bg-color-light)';
+         document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-light)');
+         links.forEach(link => link.classList.remove('dark-theme'));
+         main.classList.remove('dark-theme');
+         localStorage.setItem('theme', 'light-theme');
+     }
+   
+     const savedTheme = localStorage.getItem('theme');
+   if (savedTheme) {
+       if (savedTheme === 'dark-theme') {
+           applyDarkTheme();
+       } else if (savedTheme === 'light-theme') {
+           applyLightTheme();
+       }
+   } else {
+       applyLightTheme(); 
+   }
+   });
+   </script>
   <script>
   function updateClock() {
       const clock = document.querySelector(".display");
