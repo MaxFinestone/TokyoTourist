@@ -244,7 +244,7 @@
         footer.style.backgroundColor = 'var(--footer-bg-color-light)';
         document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-light)');
         links.forEach(link => link.classList.remove('dark-theme'));
-        main.classList.remove('dark-theme'); // Remove dark-theme class from the main element
+        main.classList.remove('dark-theme'); 
         localStorage.setItem('theme', 'light-theme');
       } else {
         body.classList.add('dark-theme');
@@ -254,7 +254,7 @@
         footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
         document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
         links.forEach(link => link.classList.add('dark-theme'));
-        main.classList.add('dark-theme'); // Add dark-theme class to the main element
+        main.classList.add('dark-theme'); 
         localStorage.setItem('theme', 'dark-theme');
       }
     });
@@ -269,44 +269,32 @@
         footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
         document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
         links.forEach(link => link.classList.add('dark-theme'));
-        main.classList.add('dark-theme'); // Add dark-theme class to the main element
+        main.classList.add('dark-theme');
       }
     }
   });
 </script>
 <script>
-  function updateClock() {
+function updateClock() {
     const clock = document.querySelector(".display");
-    const japanTime = new Date();
-    japanTime.setHours(japanTime.getHours() + 8); // Adjust for UTC+9 (Japan Standard Time)
-    let sec = japanTime.getSeconds();
-    let min = japanTime.getMinutes();
-    let hr = japanTime.getHours();
-    let day = 'AM';
-    if (hr >= 12) {
-      day = 'PM';
-      hr = hr - 12;
-    }
-    if (hr === 0) {
-      hr = 12;
-    }
-    if (sec < 10) {
-      sec = '0' + sec;
-    }
-    if (min < 10) {
-      min = '0' + min;
-    }
-    if (hr < 10) {
-      hr = '0' + hr;
-    }
-    clock.textContent = hr + ':' + min + ':' + sec + ' ' + day;
-  }
 
-  // Initial call to update the clock
-  updateClock();
+    const now = new Date();
 
-  // Set up a refresh every second
-  setInterval(updateClock, 1000);
+    const japanTimeString = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Tokyo",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    }).format(now);
+
+    clock.textContent = japanTimeString;
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
