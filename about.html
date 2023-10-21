@@ -75,6 +75,7 @@
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Terms of use</a></li>
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Cookie policy</a></li>
 						<li><a href="siterights.html">Site rights</a></li>
+						<li><a href="credits.html">Credits</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -104,106 +105,93 @@
     </div>
   </footer>
 	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-		 const themeToggle = document.querySelector('.theme-toggle');
-		 const body = document.body;
-		 const sidebar = document.querySelector('.sidebar');
-		 const clock = document.querySelector('.clock-container');
-		 const footer = document.querySelector('.footer');
-		 const links = document.querySelectorAll('.link1');
-		 const main = document.querySelector('.main');
-	 
-		 themeToggle.addEventListener('click', () => {
-				 if (body.classList.contains('dark-theme')) {
-						 applyLightTheme();
-				 } else {
-						 applyDarkTheme();
-				 }
-		 });
-	 
-		 function applyDarkTheme() {
-				 body.classList.add('dark-theme');
-				 sidebar.classList.add('dark-theme');
-				 clock.style.backgroundColor = 'black';
-				 clock.querySelector('.display').style.color = 'white';
-				 footer.style.backgroundColor = 'var(--footer-bg-color-dark)';
-				 document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
-				 links.forEach(link => link.classList.add('dark-theme'));
-				 main.classList.add('dark-theme');
-				 localStorage.setItem('theme', 'dark-theme');
-		 }
-	 
-		 function applyLightTheme() {
-				 body.classList.remove('dark-theme');
-				 sidebar.classList.remove('dark-theme');
-				 clock.style.backgroundColor = 'white';
-				 clock.querySelector('.display').style.color = 'cyan';
-				 footer.style.backgroundColor = 'var(--footer-bg-color-light)';
-				 document.documentElement.style.setProperty('--footer-text-color', 'var(--footer-text-color-light)');
-				 links.forEach(link => link.classList.remove('dark-theme'));
-				 main.classList.remove('dark-theme');
-				 localStorage.setItem('theme', 'light-theme');
-		 }
-	 
-		 const savedTheme = localStorage.getItem('theme');
-	 if (savedTheme) {
-			 if (savedTheme === 'dark-theme') {
-					 applyDarkTheme();
-			 } else if (savedTheme === 'light-theme') {
-					 applyLightTheme();
-			 }
-	 } else {
-			 applyLightTheme(); 
-	 }
-	 });
-	 </script>
-		<script>
-		function updateClock() {
-				const clock = document.querySelector(".display");
-		
-				const now = new Date();
-		
-				const japanTimeString = new Intl.DateTimeFormat("en-US", {
-						timeZone: "Asia/Tokyo",
-						hour: "2-digit",
-						minute: "2-digit",
-						second: "2-digit",
-						hour12: true
-				}).format(now);
-		
-				clock.textContent = japanTimeString;
-		}
-		
-		updateClock();
-		
-		setInterval(updateClock, 1000);
-		
-		</script>
-		<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			const sidebarLinks = document.querySelectorAll('#mobileSidebar a');
-			const checkbox = document.querySelector('#check');
-		
-			sidebarLinks.forEach(link => {
-					link.addEventListener('click', function() {
-							checkbox.checked = false;
+	
+			const themeElements = ['body', 'button', 'input', 'select', 'textarea', 'a', '.sidebar', '.navbar', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'links', 'display', '.clock'];
+	
+	
+			function toggleTheme() {
+					themeElements.forEach(selector => {
+							document.querySelectorAll(selector).forEach(el => {
+									el.classList.toggle('dark-theme');
+							});
 					});
-			});
-		});
-		</script>
-		
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var checkbox = document.getElementById('check');
-			
-			checkbox.addEventListener('change', function() {
-					if (checkbox.checked) {
-							document.body.classList.add('no-scroll');
+			}
+	
+	
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme === 'dark') {
+					toggleTheme();
+			}
+	
+	
+			const themeToggleElement = document.querySelector('.theme-toggle');
+			themeToggleElement.addEventListener('click', function(e) {
+					e.preventDefault(); 
+					
+					toggleTheme();
+	
+					const icon = themeToggleElement.querySelector('i');
+					if (icon.classList.contains('fa-moon')) {
+							icon.classList.remove('fa-moon');
+							icon.classList.add('fa-sun');
+							localStorage.setItem('theme', 'dark');
 					} else {
-							document.body.classList.remove('no-scroll');
+							icon.classList.remove('fa-sun');
+							icon.classList.add('fa-moon');
+							localStorage.setItem('theme', 'light');
 					}
 			});
+	});
+	
+	</script>
+	<script>
+	function updateClock() {
+			const clock = document.querySelector(".display");
+	
+			const now = new Date();
+	
+			const japanTimeString = new Intl.DateTimeFormat("en-US", {
+					timeZone: "Asia/Tokyo",
+					hour: "2-digit",
+					minute: "2-digit",
+					second: "2-digit",
+					hour12: true
+			}).format(now);
+	
+			clock.textContent = japanTimeString;
+	}
+	
+	updateClock();
+	
+	setInterval(updateClock, 1000);
+	
+	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const sidebarLinks = document.querySelectorAll('#mobileSidebar a');
+		const checkbox = document.querySelector('#check');
+	
+		sidebarLinks.forEach(link => {
+				link.addEventListener('click', function() {
+						checkbox.checked = false;
+				});
 		});
-		</script>
- </body>
- </html>
+	});
+	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var checkbox = document.getElementById('check');
+		
+		checkbox.addEventListener('change', function() {
+				if (checkbox.checked) {
+						document.body.classList.add('no-scroll');
+				} else {
+						document.body.classList.remove('no-scroll');
+				}
+		});
+	});
+	</script>
+	</body>
+	</html>
+	

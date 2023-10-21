@@ -13,6 +13,7 @@
     --footer-text-color-light: #ffeded;
     --map-link-hover-color-light: rgb(255, 154, 154);
     --main-text-color-light: black;
+    --cyan-color-light: cyan;
   }
   
   :root {
@@ -253,10 +254,58 @@ label #cancel {
   .clock .display {
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
-    color: cyan; 
+    color: var(--cyan-color-light); 
     filter: brightness(100%);
     letter-spacing: 5px;
   }
+
+  .clock.dark-theme .display.dark-theme{
+    color: var(--sidetext-color-dark);
+  }
+
+  .head{
+    font-family:'Shojumaru', serif;
+    font-size: 250%;
+    left: 30px;
+  }
+
+  .link1 {
+    transition: all 1.8s ease;
+    color: var(--text-color-light);
+  }
+  
+  .link1.dark-theme {
+    color: var(--text-color-dark);
+  }
+  
+  .link1:hover {
+    transition: all 0.3s ease;
+    color: var(--map-link-hover-color-light);
+  }
+  
+  .link1:hover.dark-theme{
+    color: var(--map-link-hover-color-dark);
+  }
+
+  /* Light Theme */
+.sources, 
+.sources a {
+    color: var(--text-color-light);
+}
+
+.sources a:hover {
+    color: var(--map-link-hover-color-light);
+}
+
+/* Dark Theme */
+.dark-theme .sources, 
+.dark-theme .sources a {
+    color: var(--text-color-dark);
+}
+
+.dark-theme .sources a:hover {
+    color: var(--map-link-hover-color-dark);
+}
 
  
 
@@ -367,29 +416,6 @@ background-color: var(--footer-bg-color-dark);
     background-color: var(--footer-social-color-light);
   }  
 
-  .head{
-    font-family:'Shojumaru', serif;
-    font-size: 250%;
-    left: 30px;
-  }
-
-  .link1 {
-    transition: all 1.8s ease;
-    color: var(--text-color-light);
-  }
-  
-  .link1.dark-theme {
-    color: var(--text-color-dark);
-  }
-  
-  .link1:hover {
-    transition: all 0.3s ease;
-    color: var(--map-link-hover-color-light);
-  }
-  
-  .link1:hover.dark-theme{
-    color: var(--map-link-hover-color-dark);
-  }
 
 
 
