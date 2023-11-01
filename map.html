@@ -53,7 +53,7 @@
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Terms of use</a></li>
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Cookie policy</a></li>
             <li><a href="siterights.html">Site rights</a></li>
-            <li><a href="siterights.html">Site rights</a></li>
+            <li><a href="credits.html">Credits</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -84,45 +84,42 @@
   </footer>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+  const themeElements = ['body', 'button', 'input', 'select', 'textarea', 'a', '.sidebar', '.navbar', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.links', '.display', '.clock'];
   
-      const themeElements = ['body', 'button', 'input', 'select', 'textarea', 'a', '.sidebar', '.navbar', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'links', 'display', '.clock'];
-  
-  
-      function toggleTheme() {
-          themeElements.forEach(selector => {
-              document.querySelectorAll(selector).forEach(el => {
-                  el.classList.toggle('dark-theme');
-              });
-          });
-      }
-  
-  
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-          toggleTheme();
-      }
-  
-  
-      const themeToggleElement = document.querySelector('.theme-toggle');
-      themeToggleElement.addEventListener('click', function(e) {
-          e.preventDefault(); 
-          
-          toggleTheme();
-  
-          const icon = themeToggleElement.querySelector('i');
-          if (icon.classList.contains('fa-moon')) {
-              icon.classList.remove('fa-moon');
-              icon.classList.add('fa-sun');
-              localStorage.setItem('theme', 'dark');
-          } else {
-              icon.classList.remove('fa-sun');
-              icon.classList.add('fa-moon');
-              localStorage.setItem('theme', 'light');
-          }
+  function toggleTheme() {
+    themeElements.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.classList.toggle('dark-theme');
       });
+    });
+  }
+  
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    toggleTheme();
+  }
+  
+  const themeToggleElement = document.querySelector('.theme-toggle');
+  themeToggleElement.addEventListener('click', function(e) {
+    e.preventDefault();
+  
+    toggleTheme();
+  
+    const icon = themeToggleElement.querySelector('i');
+    if (icon.classList.contains('fa-moon')) {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+      localStorage.setItem('theme', 'light');
+    }
+  });
   });
   
   </script>
+  
   <script>
   function updateClock() {
       const clock = document.querySelector(".display");

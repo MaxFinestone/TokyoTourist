@@ -13,7 +13,7 @@
     --footer-text-color-light: #ffeded;
     --map-link-hover-color-light: rgb(255, 154, 154);
     --main-text-color-light: black;
-    --cyan-color-light: cyan;
+    --clock-color-light: cyan;
   }
   
   :root {
@@ -27,6 +27,7 @@
     --footer-text-color-dark: rgb(187, 187, 187);
     --map-link-hover-color-dark: rgb(166, 166, 166);
     --main-text-color-dark: #ffd1d1;
+    --clock-color-dark: white;
   }
   
 
@@ -96,8 +97,6 @@ body.dark-theme {
     color: var(--sidetext-color-dark); 
 }
 
-
-
 .sidebar ul li:hover a {
   padding-left: 50px;
   background-color: var(--side-hover-color-light);
@@ -123,11 +122,9 @@ label #btn, label #cancel {
     cursor: pointer;
   }
   
-
   .dark-theme label #btn, .dark-theme label #cancel {
     background: var(--bg-color-dark);
   }
-  
 
 label #btn {
   left: 40px;
@@ -161,7 +158,6 @@ label #cancel {
   left: 197px;
   transition: 0.4s;
 }
-
 
 .tinfo {
   font-family: Merriweather, serif;
@@ -254,13 +250,13 @@ label #cancel {
   .clock .display {
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
-    color: var(--cyan-color-light); 
+    color: var(--clock-color-light); 
     filter: brightness(100%);
     letter-spacing: 5px;
   }
 
   .clock.dark-theme .display.dark-theme{
-    color: var(--sidetext-color-dark);
+    color: var(--clock-color-dark);
   }
 
   .head{
@@ -287,7 +283,6 @@ label #cancel {
     color: var(--map-link-hover-color-dark);
   }
 
-  /* Light Theme */
 .sources, 
 .sources a {
     color: var(--text-color-light);
@@ -297,7 +292,6 @@ label #cancel {
     color: var(--map-link-hover-color-light);
 }
 
-/* Dark Theme */
 .dark-theme .sources, 
 .dark-theme .sources a {
     color: var(--text-color-dark);
@@ -307,6 +301,11 @@ label #cancel {
     color: var(--map-link-hover-color-dark);
 }
 
+.activity-map-img {
+  background-position: 50%;
+  text-align: center;
+  cursor: default;
+}
  
 
 /*FOOTER+*/

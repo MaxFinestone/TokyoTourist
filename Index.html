@@ -34,7 +34,7 @@
               <br><br><h1 style="font-size: 50px;">Tokyo Tourist</h1><br>
         <h6>
             BY MAXENCE FINESTONE <br>
-            October 09 2023
+            October 20 2023
         </h6>
         <hr>
     </div>
@@ -70,6 +70,8 @@
         <h5>Shop</h5><hr width="160px"><br>
         <p>While Tokyo Skytree's shopping experience might not match the extensive variety of Tokyo's other retail districts, it's not just any shopping destination by mere coincidence. The uniqueness of this place lies in its stunning view and the opportunity to indulge in shopping with a sky-high backdrop. Tokyo Skytree's shopping area is located within the tower itself, offering visitors a chance to browse and purchase various souvenirs, gifts, and Japanese crafts while taking in breathtaking panoramic views of Tokyo. You'll find a diverse range of items to peruse, from traditional Japanese trinkets to modern fashion pieces, making it a perfect place to find unique and memorable souvenirs. The towering Tokyo Skytree, soaring above, ensures a shopping experience like no other. For those who aim to avoid the bustling crowds, it's advisable to explore the shops during off-peak hours, but even visitors with a mild interest in shopping and a desire for breathtaking cityscapes will discover something to savour here.
         </p>
+        <br><br>
+        <div ratio="16:9" loading="lazy" class="activity-map-img" data-v-1bf1dec9="" data-v-6bc8ce38=""><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d724.8942007645445!2d139.8106391820299!3d35.70998701865456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ed0d12f9adf%3A0x7d1d4fb31f43f72a!2sTokyo%20Skytree!5e0!3m2!1sen!2spt!440!5m2!1sen!2spt" width="1300" height="200" allowfullscreen="mhm" loading="lazy" style="border-radius: 16px;"></iframe></div>
 
         <br><br><br>
       <img src="imgs4main/Parque Shinjuku Gyoen.webp" height="430px" width="800px"><br><br>
@@ -226,11 +228,9 @@
       </div>
     </div>
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-
-    const themeElements = ['body', 'button', 'input', 'select', 'textarea', 'a', '.sidebar', '.navbar', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'links', 'display', '.clock'];
-
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+    const themeElements = ['body', 'button', 'input', 'select', 'textarea', 'a', '.sidebar', '.navbar', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '.links', '.display', '.clock'];
 
     function toggleTheme() {
         themeElements.forEach(selector => {
@@ -240,17 +240,15 @@
         });
     }
 
-
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         toggleTheme();
     }
 
-
     const themeToggleElement = document.querySelector('.theme-toggle');
     themeToggleElement.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        
+        e.preventDefault();
+
         toggleTheme();
 
         const icon = themeToggleElement.querySelector('i');
@@ -266,53 +264,54 @@
     });
 });
 
-</script>
-<script>
-function updateClock() {
-    const clock = document.querySelector(".display");
-
-    const now = new Date();
-
-    const japanTimeString = new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Tokyo",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-    }).format(now);
-
-    clock.textContent = japanTimeString;
-}
-
-updateClock();
-
-setInterval(updateClock, 1000);
-
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const sidebarLinks = document.querySelectorAll('#mobileSidebar a');
-  const checkbox = document.querySelector('#check');
-
-  sidebarLinks.forEach(link => {
-      link.addEventListener('click', function() {
-          checkbox.checked = false;
-      });
-  });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var checkbox = document.getElementById('check');
-  
-  checkbox.addEventListener('change', function() {
-      if (checkbox.checked) {
-          document.body.classList.add('no-scroll');
-      } else {
-          document.body.classList.remove('no-scroll');
-      }
-  });
-});
-</script>
-</body>
-</html>
+	</script>
+	<script>
+	function updateClock() {
+			const clock = document.querySelector(".display");
+	
+			const now = new Date();
+	
+			const japanTimeString = new Intl.DateTimeFormat("en-US", {
+					timeZone: "Asia/Tokyo",
+					hour: "2-digit",
+					minute: "2-digit",
+					second: "2-digit",
+					hour12: true
+			}).format(now);
+	
+			clock.textContent = japanTimeString;
+	}
+	
+	updateClock();
+	
+	setInterval(updateClock, 1000);
+	
+	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const sidebarLinks = document.querySelectorAll('#mobileSidebar a');
+		const checkbox = document.querySelector('#check');
+	
+		sidebarLinks.forEach(link => {
+				link.addEventListener('click', function() {
+						checkbox.checked = false;
+				});
+		});
+	});
+	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var checkbox = document.getElementById('check');
+		
+		checkbox.addEventListener('change', function() {
+				if (checkbox.checked) {
+						document.body.classList.add('no-scroll');
+				} else {
+						document.body.classList.remove('no-scroll');
+				}
+		});
+	});
+	</script>
+	</body>
+	</html>
+	

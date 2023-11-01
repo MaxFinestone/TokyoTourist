@@ -80,7 +80,6 @@
   
       const themeElements = ['body', 'button', 'input', 'select', 'textarea', 'a', '.sidebar', '.navbar', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'links', 'display', '.clock'];
   
-  
       function toggleTheme() {
           themeElements.forEach(selector => {
               document.querySelectorAll(selector).forEach(el => {
@@ -89,17 +88,15 @@
           });
       }
   
-  
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark') {
           toggleTheme();
       }
   
-  
       const themeToggleElement = document.querySelector('.theme-toggle');
       themeToggleElement.addEventListener('click', function(e) {
-          e.preventDefault(); 
-          
+          e.preventDefault();
+  
           toggleTheme();
   
           const icon = themeToggleElement.querySelector('i');
@@ -113,9 +110,10 @@
               localStorage.setItem('theme', 'light');
           }
       });
-  });
-  
+    });
   </script>
+  
+  
   <script>
   function updateClock() {
       const clock = document.querySelector(".display");
