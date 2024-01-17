@@ -2,34 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;500;600;700&family=Shojumaru&display=swap');
 
 :root {
-    --bg-color-light: rgb(255, 232, 232);
-    --text-color-light: black;
-    --sidebar-bg-color-light: #ffd1d1;
-    --side-head-color-light: rgba(0, 0, 0, 0.1);
-    --side-hover-color-light: #ff8484;
-    --menu-bars-color-light: #ff8c8c;
-    --footer-bg-color-light: #24262b;
-    --footer-social-color-light: #ffd1d1;
-    --footer-text-color-light: #ffeded;
-    --map-link-hover-color-light: rgb(255, 154, 154);
-    --main-text-color-light: black;
-    --clock-color-light: cyan;
-  }
-  
-  :root {
-    --bg-color-dark: #333333;
-    --text-color-dark: #dedede;
-    --sidebar-bg-color-dark: #7e7e7e;
-    --side-head-color-dark: rgba(255, 255, 255, 0.1);
-    --sidetext-color-dark: rgba(240, 240, 240, 1);
-    --side-hover-color-dark: rgb(66, 66, 66);
-    --footer-bg-color-dark: #595959;
-    --footer-text-color-dark: rgb(187, 187, 187);
-    --map-link-hover-color-dark: rgb(166, 166, 166);
-    --main-text-color-dark: #ffd1d1;
-    --clock-color-dark: white;
-  }
-  
+  --bg-color-light: rgb(255, 232, 232);
+  --text-color-light: black;
+  --sidebar-bg-color-light: #ffd1d1;
+  --side-head-color-light: rgba(0, 0, 0, 0.1);
+  --side-hover-color-light: #ff8484;
+  --menu-bars-color-light: #ff8c8c;
+  --footer-bg-color-light: #24262b;
+  --footer-social-color-light: #ffd1d1;
+  --footer-text-color-light: #ffeded;
+  --map-link-hover-color-light: rgb(255, 154, 154);
+  --main-text-color-light: black;
+  --clock-color-light: cyan;
+
+  --email-bg-1: #ff8f8f;
+  --email-bg-2: #c26d6d;
+  --email-bg-3: #ffb1b1;
+}
+
+:root {
+  --bg-color-dark: #333333;
+  --text-color-dark: #dedede;
+  --sidebar-bg-color-dark: #7e7e7e;
+  --side-head-color-dark: rgba(255, 255, 255, 0.1);
+  --sidetext-color-dark: rgba(240, 240, 240, 1);
+  --side-hover-color-dark: rgb(66, 66, 66);
+  --footer-bg-color-dark: #595959;
+  --footer-text-color-dark: rgb(187, 187, 187);
+  --map-link-hover-color-dark: rgb(166, 166, 166);
+  --main-text-color-dark: #ffd1d1;
+  --clock-color-dark: white;
+
+  --email-bg-1-dark: #4f4f4f;
+  --email-bg-2-dark: #434343;
+  --email-bg-3-dark: #5b5b5b;
+}
+
 
 body {
   background-color: var(--bg-color-light);
@@ -57,8 +65,9 @@ body.dark-theme {
   background: var(--sidebar-bg-color-light);
   transition: all 0.5s ease;
 }
+
 .sidebar.dark-theme {
-    background-color: var(--sidebar-bg-color-dark);
+  background-color: var(--sidebar-bg-color-dark);
 }
 
 .sidebar header {
@@ -67,8 +76,8 @@ body.dark-theme {
   border-bottom: 3.5px solid var(--side-head-color-light);
 }
 
-.sidebar header.dark-theme{
-    border-bottom: 3.5px solid var(--side-head-color-dark);
+.sidebar header.dark-theme {
+  border-bottom: 3.5px solid var(--side-head-color-dark);
 }
 
 .sidebar ul {
@@ -85,16 +94,16 @@ body.dark-theme {
   width: 100%;
   line-height: 65px;
   font-size: 20px;
-  color: var(--text-color-light); 
+  color: var(--text-color-light);
   padding-left: 40px;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0); 
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
   border-top: 1px solid rgba(0, 0, 0, 0);
   transition: 0.4s;
 }
 
 .sidebar.dark-theme ul a {
-    color: var(--sidetext-color-dark); 
+  color: var(--sidetext-color-dark);
 }
 
 .sidebar ul li:hover a {
@@ -103,8 +112,8 @@ body.dark-theme {
   background-size: 300%;
 }
 
-.sidebar.dark-theme ul li:hover a{
-    background-color: var(--side-hover-color-dark);
+.sidebar.dark-theme ul li:hover a {
+  background-color: var(--side-hover-color-dark);
 }
 
 .sidebar ul a i {
@@ -115,16 +124,18 @@ body.dark-theme {
   display: none;
 }
 
-label #btn, label #cancel {
-    position: fixed;
-    background: var(--menu-bars-color-light);
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .dark-theme label #btn, .dark-theme label #cancel {
-    background: var(--bg-color-dark);
-  }
+label #btn,
+label #cancel {
+  position: fixed;
+  background: var(--menu-bars-color-light);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.dark-theme label #btn,
+.dark-theme label #cancel {
+  background: var(--bg-color-dark);
+}
 
 label #btn {
   left: 40px;
@@ -136,25 +147,25 @@ label #btn {
 }
 
 label #cancel {
-    z-index: 1111;
-    left: -195px;
-    top: 30px;
-    font-size: 30px;
-    color: #ffffff;
-    padding: 4px 9px;
-    transition: all 0.5s ease;
-    opacity: 0.4;
-  }
-  
-  label #cancel:hover {
-    opacity: 1; 
-  }
-  
-#check:checked ~ .sidebar {
+  z-index: 1111;
+  left: -195px;
+  top: 30px;
+  font-size: 30px;
+  color: #ffffff;
+  padding: 4px 9px;
+  transition: all 0.5s ease;
+  opacity: 0.4;
+}
+
+label #cancel:hover {
+  opacity: 1;
+}
+
+#check:checked~.sidebar {
   left: 0;
 }
 
-#check:checked ~ label #cancel {
+#check:checked~label #cancel {
   left: 197px;
   transition: 0.4s;
 }
@@ -198,10 +209,12 @@ label #cancel {
   text-align: center;
 }
 
-#check:checked ~ section {
+#check:checked~section {
   margin-left: 275px;
   transition: 0.4s;
 }
+
+/*Email____________________________________________________________________*/
 
 .email2 {
   margin: 0;
@@ -209,6 +222,7 @@ label #cancel {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .name-email input[type="text"],
@@ -217,6 +231,7 @@ label #cancel {
   padding: 8px 10px;
   font-size: 20px;
   width: 16.5%;
+  border-radius: 8px;
 }
 
 .email2 textarea {
@@ -226,6 +241,7 @@ label #cancel {
   font-size: 20px;
   resize: none;
   margin-top: 10px;
+  border-radius: 8px;
 }
 
 .email2 button {
@@ -234,58 +250,76 @@ label #cancel {
   width: 150px;
   font-size: 24px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
+
+.smth {
+  text-align: center;
+  border-radius: 50px;
+  background: var(--email-bg-1);
+  box-shadow: 41px 41px 82px var(--email-bg-2),
+    -41px -41px 82px var(--email-bg-3);
+}
+
+.dark-theme .smth {
+  background: var(--email-bg-1-dark);
+  box-shadow: -20px 20px 60px var(--email-bg-2-dark),
+    20px -20px 60px var(--email-bg-3-dark);
+}
+
+/*Email____________________________________________________________________*/
+
 .clock {
-    height: 75px;
-    line-height: 75px;
-    text-align: center;
-    padding: 30px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-  }
-  
-  .clock .display {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-    color: var(--clock-color-light); 
-    filter: brightness(100%);
-    letter-spacing: 5px;
-  }
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  padding: 30px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
 
-  .clock.dark-theme .display.dark-theme{
-    color: var(--clock-color-dark);
-  }
+.clock .display {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: var(--clock-color-light);
+  filter: brightness(100%);
+  letter-spacing: 5px;
+}
 
-  .head{
-    font-family:'Shojumaru', serif;
-    font-size: 250%;
-    left: 30px;
-  }
+.clock.dark-theme .display.dark-theme {
+  color: var(--clock-color-dark);
+}
 
-  .link1 {
-    transition: all 1.8s ease;
-    color: var(--text-color-light);
-  }
-  
-  .link1.dark-theme {
-    color: var(--text-color-dark);
-  }
-  
-  .link1:hover {
-    transition: all 0.3s ease;
-    color: var(--map-link-hover-color-light);
-  }
-  
-  .link1:hover.dark-theme{
-    color: var(--map-link-hover-color-dark);
-  }
+.head {
+  font-family: 'Shojumaru', serif;
+  font-size: 250%;
+  left: 30px;
+}
 
-.sources, 
+.link1 {
+  transition: all 1.8s ease;
+  color: var(--text-color-light);
+}
+
+.link1.dark-theme {
+  color: var(--text-color-dark);
+}
+
+.link1:hover {
+  transition: all 0.3s ease;
+  color: var(--map-link-hover-color-light);
+}
+
+.link1:hover.dark-theme {
+  color: var(--map-link-hover-color-dark);
+}
+
+.sources,
 .sources a {
-    color: var(--text-color-light);
+  color: var(--text-color-light);
 }
 
 .sources a:hover {
@@ -293,13 +327,13 @@ label #cancel {
   color: var(--map-link-hover-color-light);
 }
 
-.dark-theme .sources, 
+.dark-theme .sources,
 .dark-theme .sources a {
-    color: var(--text-color-dark);
+  color: var(--text-color-dark);
 }
 
 .dark-theme .sources a:hover {
-    color: var(--map-link-hover-color-dark);
+  color: var(--map-link-hover-color-dark);
 }
 
 .activity-map-img {
@@ -307,114 +341,119 @@ label #cancel {
   text-align: center;
   cursor: default;
 }
- 
+
 
 /*FOOTER+*/
 
-#check:checked ~ .footer {
-    margin-left: 250px;
-    transition: .5s;
+#check:checked~.footer {
+  margin-left: 250px;
+  transition: .5s;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body { 
-    line-height: 1.5;
-    font-family: 'poppins',sans-serif;
-}
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-.container{
-    max-width: 1170px;
-    margin:auto;
-}
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
-ul{
-    list-style: none;
-}
-.footer{
-    background-color: var(--footer-bg-color-light);
-    margin-bottom: -100px;
-    padding: 70px 0;
-  }
-
-.footer.dark-theme{
-background-color: var(--footer-bg-color-dark);
+body {
+  line-height: 1.5;
+  font-family: 'poppins', sans-serif;
 }
 
-  .footer-col {
-    width: 25%;
-    padding: 0 15px;
-  }
-  
-  .footer-col h4 {
-    font-size: 18px;
-    color: #ffffff;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position: relative;
-  }
-  
-  .footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    background-color: #e91e63;
-    height: 2px;
-    box-sizing: border-box;
-    width: 50px;
-  }
-  
-  .footer-col ul li::not(:last-child) {
-    margin-bottom: 10px;
-  }
-  
-  .footer-col ul li a {
-    font-size: 16px;
-    text-transform: capitalize;
-    text-decoration: none;
-    font-weight: 300;
-    display: block;
-    transition: all 0.3s ease;
-    list-style: none;
-    color: var(--footer-text-color-light); 
-  }
-  
-  .footer-col.dark-theme ul li a {
-    color: var(--footer-text-color-dark);
-  }
-  
-  .footer-col ul li a:hover {
-    color: white;
-    filter: brightness(2000%);
-    padding-left: 8px;
-  }
-  
-  .footer-col .social-links a {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: 0 10px 10px 0;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: var(--footer-social-color-light);
-    transition: all 0.5s ease;
-  }
-  
-  .footer-col .social-links a:hover {
-    color: #24262b;
-    background-color: var(--footer-social-color-light);
-  }  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: var(--footer-bg-color-light);
+  margin-bottom: -100px;
+  padding: 70px 0;
+}
+
+.footer.dark-theme {
+  background-color: var(--footer-bg-color-dark);
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li::not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.3s ease;
+  list-style: none;
+  color: var(--footer-text-color-light);
+}
+
+.footer-col.dark-theme ul li a {
+  color: var(--footer-text-color-dark);
+}
+
+.footer-col ul li a:hover {
+  color: white;
+  filter: brightness(2000%);
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: var(--footer-social-color-light);
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: var(--footer-social-color-light);
+}
 
 
 
@@ -424,19 +463,19 @@ background-color: var(--footer-bg-color-dark);
 @media only screen and (max-width: 768px) {
 
   * {
-    box-sizing: border-box; 
-}
+    box-sizing: border-box;
+  }
 
-.sidebar .noscroll {
-  overflow: hidden;
-  display: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  padding: 0; 
-  margin: 0; 
+  .sidebar .noscroll {
+    overflow: hidden;
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    padding: 0;
+    margin: 0;
   }
 
   label #btn {
@@ -446,9 +485,10 @@ background-color: var(--footer-bg-color-dark);
     left: 20px;
     z-index: 1000;
   }
-  
 
-  .tinfo, .about {
+
+  .tinfo,
+  .about {
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
@@ -463,11 +503,11 @@ background-color: var(--footer-bg-color-dark);
   }
 
   .footer {
-    padding: 70px 0 70px 0; 
-    margin: 0;  
-    width: 100%; 
+    padding: 70px 0 70px 0;
+    margin: 0;
+    width: 100%;
   }
-  
+
 
   #mainimgtokyo {
     width: 100%;
@@ -482,27 +522,27 @@ background-color: var(--footer-bg-color-dark);
   .name-email input[type="email"] {
     width: 100%;
   }
-  
+
   img {
     max-width: 100%;
     height: auto;
-}
+  }
 
-#check:checked ~ .sidebar {
-  display: block;
-}
+  #check:checked~.sidebar {
+    display: block;
+  }
 
-#check:checked ~ label #cancel {
-  left: 20px;
-  top: 10px;
-  transition: 0.4s;
-  z-index: 1001;  
-}
+  #check:checked~label #cancel {
+    left: 20px;
+    top: 10px;
+    transition: 0.4s;
+    z-index: 1001;
+  }
 
-.label-btn-hidden {
-  display: none;
-  transition: display 0.5s ease; 
-}
+  .label-btn-hidden {
+    display: none;
+    transition: display 0.5s ease;
+  }
 
 
 }
